@@ -106,7 +106,7 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (0,1)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-  return Math.atan(y2 - y1, x2 - x1) * 2;
+  return Math.atan2(y2 - y1, x2 - x1);
 }
 
 /**
@@ -123,7 +123,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  return +Math.abs(value).toString().split('').pop();
+  return value % 10;
 }
 
 /**
@@ -420,7 +420,7 @@ function getNumberValue(number) {
  * '5'      => false
  */
 function isNumber(number) {
-  return !Number.isNaN(+number);
+  return Number.isFinite(number);
 }
 
 /**
@@ -604,7 +604,7 @@ function getRandomInteger(min, max) {
  * 3, 4 => 5
  */
 function getHypotenuse(a, b) {
-  return Math.sqrt(a ** 2 + b ** 2);
+  return Math.hypot(a + b);
 }
 
 /**
